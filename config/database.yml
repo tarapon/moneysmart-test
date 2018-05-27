@@ -1,22 +1,23 @@
 default: &default
   adapter: mysql2
   encoding: utf8
+
+development:
+  <<: *default
+  database: shorturl-development
   host: 127.0.0.1
   port: 3306
   username: root
   password: secret
 
-development:
-  <<: *default
-  database: shorturl-development
-
 test:
   <<: *default
   database: shorturl-test
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: secret
 
 production:
   <<: *default
-  database: shorturl-production
-  username:
-  password:
-  host:
+  url: <%= ENV['DATABASE_URL'] %>
