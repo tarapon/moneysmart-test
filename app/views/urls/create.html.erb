@@ -1,0 +1,8 @@
+<div>
+  <div class="notice">
+    Here is your short url:
+  </div>
+  <div class="short-url">
+    <%= polymorphic_url(@url, only_path: false) %>
+  </div>
+</div>
