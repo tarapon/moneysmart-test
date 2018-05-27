@@ -21,4 +21,11 @@ class UrlsControllerTest < ActionDispatch::IntegrationTest
     get url_path(id: 'random')
     assert_response :missing
   end
+
+  test 'collects visitor data' do
+    Visitor.delete_all
+    url = Url.create!(full_url: 'http://example.com')
+    get url_path(id: url.code)
+    assert_equal(1, Visitor.count)
+  end
 end

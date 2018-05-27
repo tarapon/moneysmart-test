@@ -1,4 +1,6 @@
 class UrlsController < ApplicationController
+  after_action :store_visitor, only: :show
+
   def index
     @url = Url.new
   end
@@ -23,5 +25,9 @@ class UrlsController < ApplicationController
 
   def url_params
     params.require(:url).permit(:full_url)
+  end
+
+  def store_visitor
+    @url.visitors << Visitor.from(request) unless @url.nil?
   end
 end

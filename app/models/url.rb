@@ -2,6 +2,7 @@ BASE = 36
 
 class Url < ApplicationRecord
   validates :full_url, url: { allow_nil: false, allow_blank: false }
+  has_many :visitors
 
   def code
     id.to_s(BASE) if id?
