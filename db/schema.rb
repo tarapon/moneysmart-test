@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_27_055512) do
+ActiveRecord::Schema.define(version: 2018_05_27_080927) do
 
   create_table "urls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "visitors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "url_id"
+    t.string "ip"
+    t.string "user_agent"
+    t.string "referer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url_id"], name: "index_visitors_on_url_id"
   end
 
 end
