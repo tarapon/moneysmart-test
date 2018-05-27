@@ -13,4 +13,13 @@ class VisitorsViewModel
         .limit(10)
         .to_a
   end
+
+  def top_browsers
+    @url.visitors
+        .select('browser_name, count(id) as count')
+        .group('browser_name')
+        .order('count desc')
+        .limit(10)
+        .to_a
+  end
 end

@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'validate_url'
+gem 'useragent', '~> 0.16.7'
 
 # css
 gem 'bootstrap', '~> 4.1.1'

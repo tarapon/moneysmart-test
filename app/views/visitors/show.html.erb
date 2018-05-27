@@ -5,21 +5,8 @@
 </div>
 <br/>
 
-<h3>Top visitors</h3>
+<h3>Top referers</h3>
+<%= render 'table', collection: @visitors.top_referers, field: 'referer' %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Referer</th>
-      <th scope="col">Clicks #</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @visitors.top_referers.each do |visitor| %>
-      <tr>
-        <td><%= visitor.referer || 'Unknown' %></td>
-        <td><%= visitor.count %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h3>Top browsers</h3>
+<%= render 'table', collection: @visitors.top_browsers, field: 'browser_name' %>

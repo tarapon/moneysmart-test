@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><%= field.humanize %></th>
+      <th scope="col">#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% collection.each do |visitor| %>
+      <tr>
+        <td><%= visitor.attributes[field] || 'Unknown' %></td>
+        <td><%= visitor.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

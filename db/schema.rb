@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_27_080927) do
+ActiveRecord::Schema.define(version: 2018_05_27_093658) do
 
   create_table "urls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_url"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2018_05_27_080927) do
     t.string "referer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "browser_name"
+    t.string "browser_version"
     t.index ["url_id"], name: "index_visitors_on_url_id"
   end
 
