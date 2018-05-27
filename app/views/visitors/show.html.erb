@@ -1,0 +1,18 @@
+<h3>Top visitors</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Referer</th>
+      <th scope="col">Clicks #</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @visitors.top_referers.each do |visitor| %>
+      <tr>
+        <td><%= visitor.referer || 'Unknown' %></td>
+        <td><%= visitor.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
