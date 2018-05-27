@@ -1,9 +1,13 @@
-<div class="hint">
+<div class="alert alert-secondary">
   Allows http or https urls, ex: http://google.com or https://en.wikipedia.org/
 </div>
 
 <%= form_for :url do |f| %>
   <%= render 'errors', target: @url %>
-  Url: <%= f.text_field :full_url %><br />
-  <%= f.submit 'Get short url' %>
+  <div class="form-group">
+    <%= f.label :full_url, 'URL' %>
+    <%= f.text_field :full_url, class: 'form-control' %><br />
+  </div>
+
+  <%= f.submit 'Get short url', class: 'btn btn-primary' %>
 <% end %>

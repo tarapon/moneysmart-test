@@ -1,8 +1,9 @@
-<div>
-  <div class="notice">
-    Here is your short url:
-  </div>
-  <div class="short-url">
+<div class="alert alert-success">
+  Here is your short url:
+</div>
+
+<div class="card">
+  <div class="card-body">
     <%= polymorphic_url(@url, only_path: false) %>
   </div>
 </div>
