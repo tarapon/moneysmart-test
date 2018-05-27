@@ -14,11 +14,9 @@ class UrlsController < ApplicationController
 
   def show
     @url = Url.find_by_code(params[:id])
-    if @url
-      redirect_to @url.full_url
-    else
-      render nothing: true, status: 404
-    end
+    redirect_to @url.full_url
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
   end
 
   private
