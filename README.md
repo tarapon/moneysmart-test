@@ -1,3 +1,6 @@
+
+https://floating-earth-55891.herokuapp.com/
+
 #### How to use:
 
 1) Open root page
@@ -6,9 +9,9 @@
 
 #### Statistic
  
-1) Open `/visitors/:code`, code - short url code
+1) Open `https://floating-earth-55891.herokuapp.com/visitors/:code`, code - short url code
 
-for short url `http://domain.com/abc` statistic page is `http://domain.com/visitors/abc`
+for short url `https://floating-earth-55891.herokuapp.com/1f28g` statistic page is `https://floating-earth-55891.herokuapp.com/visitors/1f28g`
 
 #### Short url generation:
 
