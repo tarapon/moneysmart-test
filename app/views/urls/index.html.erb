@@ -1,3 +1,7 @@
+<div class="hint">
+  Allows http or https urls, ex: http://google.com or https://en.wikipedia.org/
+</div>
+
 <%= form_for :url do |f| %>
   <%= render 'errors', target: @url %>
   Url: <%= f.text_field :full_url %><br />

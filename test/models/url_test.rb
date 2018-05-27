@@ -13,8 +13,24 @@ class UrlTest < ActiveSupport::TestCase
   end
 
   test 'requires presence of full_url' do
-    url = Url.new(full_url = nil)
+    url = Url.new(full_url: nil)
     url.validate
-    assert_equal(url.errors.messages, full_url: ["can't be blank"])
+    assert_equal(url.errors.messages, full_url: ["is not a valid URL"])
+  end
+
+  test 'requires valid url format' do
+    url = Url.new(full_url: 'not-a-url')
+    url.validate
+    assert_equal(url.errors.messages, full_url: ["is not a valid URL"])
+  end
+
+  test 'allow http urls' do
+    url = Url.new(full_url: 'http://example.com')
+    assert(url.validate)
+  end
+
+  test 'allow https urls' do
+    url = Url.new(full_url: 'https://example.com')
+    assert(url.validate)
   end
 end
