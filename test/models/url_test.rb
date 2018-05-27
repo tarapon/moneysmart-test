@@ -12,8 +12,8 @@ class UrlTest < ActiveSupport::TestCase
     assert_nil(url.code)
   end
 
-  test 'requires presence of fullUrl' do
-    url = Url.new(fullUrl = nil)
+  test 'requires presence of full_url' do
+    url = Url.new(full_url = nil)
     url.validate
     assert_equal(url.errors.messages, fullUrl: ["can't be blank"])
   end
